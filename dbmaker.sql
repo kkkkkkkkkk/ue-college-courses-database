@@ -1,13 +1,13 @@
 -- COURSE'S SPECIALIZATIONS/MAJORS
-CREATE TABLE IF NOT EXIST 'majors' (
-'major_id' INT(11) NOT NULL,
-'major_name' VARCHAR(256) NOT NULL,
-'course_id' INT(11) NOT NULL,
-PRIMARY KEY('major_id')
+CREATE TABLE IF NOT EXISTS majors (
+major_id INT(11) NOT NULL,
+major_name VARCHAR(256) NOT NULL,
+course_id INT(11) NOT NULL,
+PRIMARY KEY(major_id)
 );
 
 -- INSERT VALUES
-INSERT INTO 'majors' ('major_id', 'major_name', 'course_id') VALUES
+INSERT INTO majors (major_id, major_name, course_id) VALUES
 -- COLLEGE OF ARTS AND SCIENCES
 -- Bachelor of Arts Major in:
 (1, 'Economics', 3),
@@ -55,21 +55,21 @@ INSERT INTO 'majors' ('major_id', 'major_name', 'course_id') VALUES
 
 
 -- COURSES PER COLLEGE
-CREATE TABLE IF NOT EXIST 'courses' (
-'course_id' INT(11) NOT NULL,
-'course_name' VARCHAR(256) NOT NULL,
-'course_shortname' VARCHAR(128),
-'college_id' INT(11) NOT NULL,
-PRIMARY KEY('course_id')
+CREATE TABLE IF NOT EXISTS courses (
+course_id INT(11) NOT NULL,
+course_name VARCHAR(256) NOT NULL,
+course_shortname VARCHAR(128),
+college_id INT(11) NOT NULL,
+PRIMARY KEY(course_id)
 );
 
-INSERT INTO 'courses' ('course_id', 'course_name', 'course_shortname', 'college_id') VALUES
+INSERT INTO courses (course_id, course_name, course_shortname, college_id) VALUES
 -- CAS
 (1, 'Bachelor of Arts in Broadcast Communication', '',1),
 (2, 'Bachelor of Arts in Journalism', '',1),
 (3, 'Bachelor of Arts major in', '', 1),
 (4, 'Bachelor of Science major in', '', 1),
-(5, 'Communication Proficiency Program for the Contact Center Industry with specialization in', 1),
+(5, 'Communication Proficiency Program for the Contact Center Industry with specialization in', '', 1),
 -- BA
 (6, 'Bachelor of Science in Accounting Technology', 'BSAcT', 2),
 (7, 'Bachelor of Science in Accountancy', 'BSA', 2),
@@ -104,13 +104,14 @@ INSERT INTO 'courses' ('course_id', 'course_name', 'course_shortname', 'college_
 (31, 'Juris Doctor', 'JD', 7);
 
 -- COLLEGES IN UNIVERSITY OF THE EAST | MANILA
-CREATE TABLE IF NOT EXIST 'colleges' (
-'college_id' INT(11) NOT NULL,
-'college_name' VARCHAR(128) NOT NULL,
-PRIMARY KEY('collge_id')
+CREATE TABLE IF NOT EXISTS colleges (
+college_id INT(11) NOT NULL,
+college_name VARCHAR(128) NOT NULL,
+PRIMARY KEY(college_id)
 );
 
-INSERT INTO 'colleges' ('college_id', 'college_name') VALUES
+INSERT INTO colleges (college_id, college_name) VALUES
+
 (1, 'College of Arts and Sciences'),
 (2, 'College of Business Administration'),
 (3, 'College of Computer Studies and Systems'),
